@@ -1,0 +1,127 @@
+$clr-background: #eceff1;
+$clr-white: #ffffff;
+$clr-primary: #aa00ff;
+$clr-gray: #263238;
+$font-size: 16px;
+$border-radius: 0.2rem;
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: $font-size;
+    color: $clr-gray;
+    background-color: $clr-background;
+    height: 100vh;
+}
+
+.navbar{
+    width: 100vw;
+    background-color: $clr-primary;
+    margin: 0;
+
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        height: 3em;
+
+        li{
+            padding-right: 2em;
+            font-weight: bold;
+            color: $clr-white;
+        }
+        li:first-child{
+            margin-right: auto;
+            margin-left: 2em;
+            overflow: hidden;
+        }
+    }
+}
+#wrapper-main{
+    margin: 2em;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1em;
+
+        #search{
+            background-color: $clr-white;
+            border-radius: $border-radius;
+            width: 15em;
+            height: 2.5em;
+            padding: auto;
+            display: flex;
+            align-items: center;
+            color: $clr-gray;
+
+            .material-icons{
+                padding: 0 .2em;
+                font-size: 1.5em;
+            }
+        }
+    }
+    #wrapper-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5em;
+
+        .container{
+            background-color: $clr-white;
+            border-radius: $border-radius;
+            padding: 1em;
+            border-top: 4px solid $clr-primary;
+            
+            h2{
+                margin-top: 0.5em;
+                margin-bottom: 0.2em;
+            }
+            p.date{
+                font-size: 0.8em;
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                margin-bottom: -1em;
+                margin-top: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 550px) {
+        #wrapper-grid{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            margin-bottom: 1.5em;
+
+            h1{
+                margin: 0.5em 0;
+            }
+
+            #search{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 3em;
+    background-color: $clr-primary;
+    color: $clr-white;
+    text-align: center;
+
+}
+
